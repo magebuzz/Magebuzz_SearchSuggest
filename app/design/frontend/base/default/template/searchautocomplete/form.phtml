@@ -1,0 +1,54 @@
+<?php 
+/*
+* Copyright (c) 2014 www.magebuzz.com 
+*/
+?>
+<?php
+	$_helper = Mage::helper('searchautocomplete');
+	$catalogSearchHelper =  $this->helper('catalogsearch');
+?>
+<form id="searchautocomplete_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+    <div class="form-search">
+        <label for="search"><?php echo $this->__('Search:') ?></label>
+        <input id="search_input" type="text" name="keyword" value="" class="input-text" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" />
+				<input id="search" type="hidden" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="" class="input-text" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" />
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('searchautocomplete_form', 'search_input', '<?php echo $this->__('Search entire store here...') ?>');
+        //]]>
+        </script>
+    </div>
+</form>
+<?php if($_helper->isActive()):?>
+<div id="boxResults" style="display:none;">
+	<a class="close-dropdown" href="javascript://" onclick="closeSearchResultBox()" title="<?php echo $this->__('Close')?>" alt="<?php echo $this->__('Close')?>">X</a>	
+	<div id="listResults" style="display:none;">
+	</div>
+	<div id="resultNotice">
+		<label id="resultLabel">Search result</label>
+	</div>
+</div>
+<script type="text/javascript">
+	var ajaxsearch = new SearchAutocomplete(
+        '<?php echo $this->getUrl('searchautocomplete/index/ajaxsearch') ?>',
+		'<?php echo $catalogSearchHelper->getResultUrl() ?>',		
+		'<?php echo Mage::helper('searchautocomplete')->getSearchResultHeading()?>',
+		'search_input',
+    '<?php echo Mage::helper('searchautocomplete')->__('No results for')?>'    
+    );
+	var min_character = <?php echo Mage::getStoreConfig('searchautocomplete/general/min_character')?>;
+	Event.observe('search_input', 'keyup', function(event){
+		var searchBox = $('search_input');
+		if(searchBox.value.length >= min_character){
+			ajaxsearch.search();
+		}
+		$('search').value = searchBox.value;	
+	});
+	function closeSearchResultBox() {
+		var boxResults = $('boxResults');
+		boxResults.style.display = "none";
+	}
+</script>
+<?php endif; ?>

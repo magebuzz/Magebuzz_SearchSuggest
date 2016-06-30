@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<magebuzz translate="label">
+				<label>Magebuzz Extension</label>
+				<sort_order>400</sort_order>
+		</magebuzz>
+	</tabs>
+	<sections>
+    <searchautocomplete translate="label" module="searchautocomplete">
+			<label>Search Autocomplete</label>
+			<tab>magebuzz</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>299</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<is_active translate="label comment">
+							<label>Enable Search Autocomplete</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</is_active>
+						<min_character translate="label comment">
+							<label>Minimum of characters to start search</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Searches after the minimum characters has been entered</comment>
+						</min_character>
+						<searchable_attributes translate="label">
+							<label>Search by attributes</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>searchautocomplete/source_product_attribute</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<comment>Select product attribute to search. Default: Description, Name</comment>
+						</searchable_attributes>
+						<search_by_tag translate="label comment">
+							<label>Search by tags</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</search_by_tag>
+					</fields>
+				</general>
+				<display_setting translate="label">
+					<label>Display Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>3</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<number_results translate="label comment">
+							<label>Number of results</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Number of products to display</comment>
+						</number_results>
+						<show_out_of_stock>
+							<label>Show out of stock products</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>2</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+						</show_out_of_stock>
+						<search_result_heading translate="label">
+							<label>Search result heading</label>
+							<frontend_type>textarea</frontend_type>                            
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>{{keyword}} will be replaced by the keyword which is searched by customer</comment>
+						</search_result_heading>
+						<is_show_thumbnail>
+							<label>Show product thumbnail image</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>4</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+						</is_show_thumbnail>
+						<thumbnail_product_image_size translate="label">
+							<label>Width of thumbnail image</label>
+							<frontend_type>text</frontend_type>                            
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><is_show_thumbnail>1</is_show_thumbnail></depends>
+						</thumbnail_product_image_size>
+						<is_show_description translate="label comment">
+							<label>Show product description</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</is_show_description>
+						<limit_character_product_desc translate="label">
+							<label>Limit characters in product description</label>
+							<frontend_type>text</frontend_type>                            
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><is_show_description>1</is_show_description></depends>
+							<comment></comment>
+            </limit_character_product_desc>
+					</fields>
+				</display_setting>
+			</groups>
+		</searchautocomplete>
+  </sections>
+</config>

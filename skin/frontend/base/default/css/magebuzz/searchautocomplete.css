@@ -1,0 +1,92 @@
+/*
+* Copyright (c) 2014 www.magebuzz.com 
+*/
+#boxResults{
+	position:absolute;
+	right:33px;
+	background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #E1E1E1;
+	width:350px;
+	top:30px;
+	z-index:999;
+	text-align:left;
+	border-radius:5px;
+}
+#searchautocomplete_form .form-search input.input-text{}
+#searchautocomplete_form .form-search input.loading-result{background:#FFFFFF url(searchautocomplete/images/search-loading.gif) 95% center no-repeat;}
+#searchautocomplete_form .form-search input.search-complete{background:#FFFFFF url(searchautocomplete/images/search_complete.png) 95% center no-repeat;}
+#boxResults #resultNotice{
+	float: left;
+	width:100%; 
+	text-align:center;
+	padding:5px 0;
+}
+#boxResults .close-dropdown{background:url(searchautocomplete/images/close-icon.png) top left no-repeat; float:right; width:16px; height:16px; text-indent:-999em; margin:10px;}
+#boxResults #resultNotice span.keyword{
+	font-weight:bold; 
+	color:#ff0000; 
+	padding:2px;
+}
+#boxResults #resultLabel{
+	font-style:italic;
+	font-size:12px;
+	color:#999;
+}
+#boxResults #resultLabel a{
+	font-style:italic;
+	font-size:12px;
+	color:#2f2f2f;
+	text-decoration:none;
+	 font-weight: bold;
+}
+#boxResults #listResults{
+		float:left;
+		width:100%;
+}
+#listResults .result-title{
+	background: none repeat scroll 0 0 #CCCCCC;
+    float: left;
+    padding: 2px 0;
+    text-align: center;
+    width: 100%;
+	color: #444444;
+}
+#listResults .list-products{
+	float:left; 
+	width:100%;
+	margin: 0 0 5px;
+}
+#listResults .list-products li.item{
+	border-bottom: 1px dashed #CCCCCC;
+    float: left;
+    padding:0;
+    width: 100%;
+}
+#listResults .list-products li .product-info{
+	padding:10px;
+	background:#FFFFFF;
+	overflow:hidden;
+}
+#listResults .list-products li:hover{cursor:pointer; color:#FFFFFF;}
+#listResults .list-products li:hover .product-info{
+	padding:10px;
+	background:#3b5998;
+}
+#listResults .list-products .product-img{float:left; background:#FFFFFF; border:1px solid #E1E1E1; width:20%; text-align:center;}
+#listResults .list-products .product-desc{
+	float: right;
+    width: 77%;
+}
+#listResults .list-products .product-name{}
+#listResults .list-products p.desc{color:#000; margin:0 0 3px;}
+#listResults .list-products li:hover p.desc{color:#FFFFFF;}
+#listResults .list-products .product-price h5{color:#FF0000; font-size:15px; font-weight:bold;}
+#listResults .list-products .product-name a{
+	color: #617ff0;
+    font-weight: bold;
+	font-size:12px;
+    text-decoration: none;
+}
+#listResults .list-products  li:hover .product-name a{
+	color: #FFFFFF;
+}
